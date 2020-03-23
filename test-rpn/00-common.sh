@@ -28,7 +28,7 @@ get ()
    [ -n "$expected" ] && echo "  expect: $expected"
    echo "  result: $result"
 
-   [ -z "$expected" ] || [ $result == $expected ]
+   [ -z "$expected" ] || [ "$result" == "$expected" ]
 }
 
 post ()
