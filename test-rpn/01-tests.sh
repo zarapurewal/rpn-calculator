@@ -2,6 +2,14 @@
 
 source "00-common.sh"
 
+#
+# Don't change anything here.
+#
+# However, for your own testing, you might like to copy the ideas here
+# and tweak them to initially test just fragments of the API.
+#
+# For that, see user-tests.sh.
+
 clear_stack
 get "/length" 0
 post "/push" '{"values": [123]}'

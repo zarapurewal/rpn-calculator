@@ -3,6 +3,9 @@
 #
 # You should not need to change anything in here.
 #
+# These are some shell functions which wrap wget and curl, and simplify
+# the rest of the test code.
+#
 
 # Fail on any command which fails.
 #
@@ -69,4 +72,3 @@ check_stack ()
       post "/push" '{"values": ['$value']}'
    fi
 }
-
