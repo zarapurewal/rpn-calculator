@@ -99,4 +99,30 @@ var stack = [];
  * Start the server on the indicated port.
  */
 
-app.listen(port, () => console.log(`Example app listening on port ${port}...`))
+app.listen(port, function() {
+   console.log("listening on port", port);
+
+   /**
+    * Now, the server is up.
+    *
+    * Next, if there is a command-line argument, then we'll run that
+    * as a test command (and then exit).
+    *
+    * We're doing it this way, because this will be easy to automate in
+    * the CI environment.
+    */
+
+   console.log(process.argv.length);
+   switch ( process.argv.length ) {
+      case 2:
+	 // OK.  There's nothing to do here.  Just leave the server running.
+	 break;
+      case 3:
+	 runTest(process.argv[2]);
+	 break;
+      default:
+	 // This is an error.
+	 console.error("invalid arguments");
+	 process.exit(1);
+   }
+});
