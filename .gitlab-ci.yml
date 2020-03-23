@@ -1,0 +1,18 @@
+image: "smblott/dcu-docker-gitlab-ci"
+
+# We'll do everything in one stage, here.
+#
+stages:
+   - test
+
+test:
+   stage: test
+   # What you need to do here:
+   # - Run "make build" in the "static" directory to build "index.html".
+   # - Install the required node modules.  These SHOULD NOT be in your repo.
+   # - Run whatever tests are required.
+   #
+   script:
+      - echo "FIXME: build static/index.html"
+      - echo "FIXME: install node modules"
+      - echo "FIXME: run tests"
