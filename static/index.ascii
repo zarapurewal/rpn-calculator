@@ -44,6 +44,17 @@ Explanation:
 ----
 
 ----
+GET /length
+
+result (JSON encoded):
+  "5"
+
+Explanation:
+  Return the length of the stack.  (There are currently five elements on
+  the stack.)
+----
+
+----
 GET /peek
 
 result (JSON encoded):
