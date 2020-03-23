@@ -1,0 +1,23 @@
+{
+  "name": "2020-ca282-week-09",
+  "version": "1.0.0",
+  "description": "Test repo for CA282 week 9.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.computing.dcu.ie:sblott/2020-ca282-week-09.git"
+  },
+  "keywords": [
+    "RPN",
+    "calculator",
+    "CA282"
+  ],
+  "author": "Various",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
