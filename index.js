@@ -40,7 +40,7 @@ app.post("/test/maximum", function(req, res) {
         && 0 <= req.body.maximum ) {
       maxRandom = req.body.maximum;
       console.log("setting maximum to", maxRandom);
-      res.send(`ok, maximum set to: ${maxRandom}\n`);
+      res.send(`server... ok, setting maximum: ${maxRandom}\n`);
    }
    else {
       res.status(400).send("bad request (invalid maximum value)\n");
@@ -55,7 +55,7 @@ app.get("/test/random", function(req, res) {
    }
    else {
       var r = Math.floor(Math.random() * maxRandom);
-      console.log("random:", r);
+      console.log("server... sending random:", r);
       res.send(JSON.stringify(r) + "\n");
    }
 });
@@ -91,12 +91,15 @@ app.use(express.static('./static'));
 var stack = [];
 
 /**
- * YOUR WORK GOES HERE!
+ * (You shouldn't have to change anything ABOVE here.)
  *
+ * YOUR WORK GOES HERE!
  */
 
 /**
  * Start the server on the indicated port.
+ *
+ * (You shouldn't have to change anything BELOW here.)
  */
 
 app.listen(port, function() {
@@ -106,18 +109,18 @@ app.listen(port, function() {
     * Now, the server is up.
     *
     * Next, if there is a command-line argument, then we'll run that
-    * as a test command (and then exit).
+    * as a test command via make (and then exit).
     *
     * We're doing it this way, because this will be easy to automate in
     * the CI environment.
     */
 
-   console.log(process.argv.length);
    switch ( process.argv.length ) {
       case 2:
 	 // OK.  There's nothing to do here.  Just leave the server running.
 	 break;
       case 3:
+	 console.log("launching tests: make", process.argv[2]);
 	 runTest(process.argv[2]);
 	 break;
       default:
@@ -126,3 +129,21 @@ app.listen(port, function() {
 	 process.exit(1);
    }
 });
+
+var childProcess = require("child_process");
+
+runTest = function(target) {
+   make = childProcess.spawn("make", [target]);
+
+   make.stdout.on("data", function(data) {
+      console.log(data.toString().trimEnd());
+   });
+
+   make.stderr.on("data", function(data) {
+      console.error(data.toString().trimEnd());
+   });
+
+   make.on("close", function(code) {
+      process.exit(code);
+   });
+}

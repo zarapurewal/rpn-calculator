@@ -13,16 +13,16 @@ set -e
 
 # Set the maximum.
 #
-curl -d '{"maximum": 30}' -H "Content-Type: application/json" -X POST "http://localhost:$PORT/test/maximum"
+curl -s -d '{"maximum": 30}' -H "Content-Type: application/json" -X POST "http://localhost:$PORT/test/maximum"
 
 # Set the maximum to an invalid value (expecting "bad request" here).
 #
-! curl -d '{"maximum": -5}' -H "Content-Type: application/json" -X POST "http://localhost:$PORT/test/maximum"
-! curl -d '{"maximum": "123"}' -H "Content-Type: application/json" -X POST "http://localhost:$PORT/test/maximum"
+! curl -s -d '{"maximum": -5}' -H "Content-Type: application/json" -X POST "http://localhost:$PORT/test/maximum"
+! curl -s -d '{"maximum": "123"}' -H "Content-Type: application/json" -X POST "http://localhost:$PORT/test/maximum"
 
 # Set the maximum again.
 #
-curl -d '{"maximum": 20}' -H "Content-Type: application/json" -X POST "http://localhost:$PORT/test/maximum"
+curl -s -d '{"maximum": 20}' -H "Content-Type: application/json" -X POST "http://localhost:$PORT/test/maximum"
 
 # Test some random numbers.  We expect numbers in the range 0 (inclusive) to 20 (exclusive) here.
 #
@@ -33,6 +33,6 @@ echo "expecting numbers in the range 0 <= r < 20..."
 for t in `seq 5`
 do
    r=$( wget -O - -q "http://localhost:$PORT/test/random" )
-   echo " " $r
+   echo " " "received:" $r
    (( 0 <= r && r < 20 ))
 done
