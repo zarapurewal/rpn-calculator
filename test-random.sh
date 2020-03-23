@@ -36,3 +36,13 @@ do
    echo " " "received:" $r
    (( 0 <= r && r < 20 ))
 done
+
+# Finally, we'll test that we can read "index.html".
+#
+# We'll not worry about the contents, only that it exists.
+#
+echo wget -O /dev/null -q "http://localhost:$PORT/"
+if wget -O /dev/null -q "http://localhost:$PORT/"
+then
+   echo "ok"
+fi
