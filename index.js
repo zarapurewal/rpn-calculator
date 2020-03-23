@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const port = process.env.PORT || 6541;
+const port = process.env.PORT || 8092;
 
 /**
  * Example of a different API
