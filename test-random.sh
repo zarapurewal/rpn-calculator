@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # This is a poor-man's test of the random-number generator (test API).
 # It requires "wget" and "curl".
@@ -27,12 +27,12 @@ curl -d '{"maximum": 20}' -H "Content-Type: application/json" -X POST "http://lo
 # Test some random numbers.  We expect numbers in the range 0 (inclusive) to 20 (exclusive) here.
 #
 
+echo
+echo "generating random numbers (r)"
+echo "expecting numbers in the range 0 <= r < 20..."
 for t in `seq 5`
 do
-   wget -O - -q "http://localhost:$PORT/test/random"
+   r=$( wget -O - -q "http://localhost:$PORT/test/random" )
+   echo " " $r
+   (( 0 <= r && r < 20 ))
 done
-
-
-# Ensure the script as a whole succeeds.
-#
-true
