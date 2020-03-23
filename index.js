@@ -64,9 +64,36 @@ app.get("/test/random", function(req, res) {
  * Serve static files from the directory ./static.
  *
  * Just "index.html" is served from here.
+ *
+ * You don't have to do anything here, apart from ensuring that the
+ * asciidoc file in the static directory has been compiled to HTML.
  */
 
 app.use(express.static('./static'));
+
+/* RPN calculator API.
+ *
+ * Javascript tips:
+ *
+ *   - Look carefully at the examples above.  Much of what you need to do
+ *     can be achieved by copying and tweaking that code.
+ *
+ *   - stack = stack.concat(values)
+ *   - stack.length (length of array "stack", like len(stack) in Python)
+ *   - value = stack.pop()
+ *   - stack.push(value)
+ *
+ *   - For the /push request, the JSON body will already have been parsed by
+ *     the body parser above.  You don't need to do anything special.  Just
+ *     verify that req.body.values exists.
+ */
+
+var stack = [];
+
+/**
+ * YOUR WORK GOES HERE!
+ *
+ */
 
 /**
  * Start the server on the indicated port.
