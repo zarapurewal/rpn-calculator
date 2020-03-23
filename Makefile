@@ -20,11 +20,13 @@ test-rpn:
 	PORT=$(port) bash test-rpn.sh
 
 # Start the server, run the tests for the /test/random API and exit.
+# This will fail if the server is already running!
 #
 run-test-random:
 	PORT=$(port) node index.js test-random
 
 # Start the server, run the tests for the /test/random API and exit.
+# This will fail if the server is already running!
 #
 run-test-rpn:
 	PORT=$(port) node index.js test-rpn
