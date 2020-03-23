@@ -28,7 +28,7 @@ Note:
   This is a simplification.  It simply means that the entire list can be
   concatenated onto the stack.
 
-Example:
+Tip:
   stack = stack.concat(data.values);
 ----
 
