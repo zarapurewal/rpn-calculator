@@ -13,7 +13,12 @@ set -e
 
 # Set the maximum.
 #
+echo "set maximum to 30..."
 curl -s -d '{"maximum": 30}' -H "Content-Type: application/json" -X POST "http://localhost:$PORT/test/maximum"
+
+echo "test maximum is now 30..."
+wget -O - -q "http://localhost:$PORT/test/maximum"
+wget -O - -q "http://localhost:$PORT/test/maximum" | grep -w 30 > /dev/null
 
 # Set the maximum to an invalid value (expecting "bad request" here).
 #
@@ -22,7 +27,12 @@ curl -s -d '{"maximum": 30}' -H "Content-Type: application/json" -X POST "http:/
 
 # Set the maximum again.
 #
+echo "set maximum to 20..."
 curl -s -d '{"maximum": 20}' -H "Content-Type: application/json" -X POST "http://localhost:$PORT/test/maximum"
+
+echo "test maximum is now 20..."
+wget -O - -q "http://localhost:$PORT/test/maximum"
+wget -O - -q "http://localhost:$PORT/test/maximum" | grep -w 20 > /dev/null
 
 # Test some random numbers.  We expect numbers in the range 0 (inclusive) to 20 (exclusive) here.
 #

@@ -17,6 +17,10 @@ const port = process.env.PORT || 6541;
  *    The data is a JSON-encoded maximum for the random number generator, and
  *    this call sets the maximum to that value.
  *
+ * GET /test/maximum
+ *
+ *    Get the current maximum..
+ *
  * GET /test/random
  *
  *    This returns a random number.  It is an error to request a random
@@ -45,6 +49,11 @@ app.post("/test/maximum", function(req, res) {
    else {
       res.status(400).send("bad request (invalid maximum value)\n");
    }
+});
+
+app.get("/test/maximum", function(req, res) {
+   response = { maximum: maxRandom };
+   res.send(JSON.stringify(response));
 });
 
 // Example GET request (including handling an error case).
