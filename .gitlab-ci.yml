@@ -4,6 +4,6 @@ image: "smblott/dcu-docker-gitlab-ci"
 #
 test:
    script:
-      - echo "FIXME: build static/index.html"
-      - echo "FIXME: install node modules"
-      - echo "FIXME: run tests"
+      - "echo FIXME: build static/index.html"
+      - "echo FIXME: install node modules"
+      - "echo FIXME: run tests"
