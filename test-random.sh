@@ -7,6 +7,19 @@
 # PORT is not set.
 : ${PORT:=8092}
 
+get () {
+   path="$1"; shift
+
+   wget -O - -q "http://localhost:$PORT$path"
+}
+
+post () {
+   path="$1"; shift
+   data="$1"; shift
+
+   curl -s -d "$data" -H "Content-Type: application/json" -X POST "http://localhost:$PORT$path"
+}
+
 # Fail with an error if any of the following commands fail.
 #
 set -e
@@ -14,35 +27,41 @@ set -e
 # Set the maximum.
 #
 echo "set maximum to 30..."
-curl -s -d '{"maximum": 30}' -H "Content-Type: application/json" -X POST "http://localhost:$PORT/test/maximum"
+post "/test/maximum" '{"maximum": 30}'
 
+echo
 echo "test maximum is now 30..."
-wget -O - -q "http://localhost:$PORT/test/maximum"
-wget -O - -q "http://localhost:$PORT/test/maximum" | grep -w 30 > /dev/null
+get "/test/maximum"
+get "/test/maximum" | grep -w 30 > /dev/null
 
 # Set the maximum to an invalid value (expecting "bad request" here).
 #
-! curl -s -d '{"maximum": -5}' -H "Content-Type: application/json" -X POST "http://localhost:$PORT/test/maximum"
-! curl -s -d '{"maximum": "123"}' -H "Content-Type: application/json" -X POST "http://localhost:$PORT/test/maximum"
+echo
+echo setting the maximum to a couple of invalid values
+echo "(these should fail)"
+! post "/test/maximum" '{"maximum": -5}'
+! post "/test/maximum" '{"maximum": "123"}'
 
 # Set the maximum again.
 #
+echo
 echo "set maximum to 20..."
-curl -s -d '{"maximum": 20}' -H "Content-Type: application/json" -X POST "http://localhost:$PORT/test/maximum"
+post "/test/maximum" '{"maximum": 20}'
 
+echo
 echo "test maximum is now 20..."
-wget -O - -q "http://localhost:$PORT/test/maximum"
-wget -O - -q "http://localhost:$PORT/test/maximum" | grep -w 20 > /dev/null
+get "/test/maximum"
+get "/test/maximum" | grep -w 20 > /dev/null
 
 # Test some random numbers.  We expect numbers in the range 0 (inclusive) to 20 (exclusive) here.
 #
 
 echo
-echo "generating random numbers (r)"
+echo "generating some random numbers (r)"
 echo "expecting numbers in the range 0 <= r < 20..."
 for t in `seq 5`
 do
-   r=$( wget -O - -q "http://localhost:$PORT/test/random" )
+   r=$( get "/test/random" )
    echo " " "received:" $r
    (( 0 <= r && r < 20 ))
 done
