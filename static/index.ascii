@@ -44,6 +44,8 @@ Explanation:
 
 Tip:
   res.send(JSON.stringify(stack.pop()))
+
+  (But you had better first check that the array isn't empty.)
 ----
 
 ----
