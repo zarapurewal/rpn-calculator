@@ -5,7 +5,7 @@
 
 # PORT is set in Makefile, or defaults here to 6781 if the environment variable
 # PORT is not set.
-: ${PORT:=6781}
+: ${PORT:=8092}
 
 # Fail with an error if any of the following commands fail.
 #
