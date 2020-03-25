@@ -70,6 +70,8 @@ done
 #
 # We'll not worry about the contents, only that it exists.
 #
+echo
+echo "verifying that we can download 'index.html'..."
 echo wget -O /dev/null -q "http://localhost:$PORT/"
 if wget -O /dev/null -q "http://localhost:$PORT/"
 then
