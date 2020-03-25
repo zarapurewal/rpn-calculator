@@ -74,4 +74,6 @@ echo wget -O /dev/null -q "http://localhost:$PORT/"
 if wget -O /dev/null -q "http://localhost:$PORT/"
 then
    echo "ok"
+else
+   false
 fi
