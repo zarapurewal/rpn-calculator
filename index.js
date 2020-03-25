@@ -27,7 +27,7 @@ const port = process.env.PORT || 8092;
  *    number before the maximum has been set (see above).
  */
 
-var maxRandom = 0;
+var maxRandom = 10;
 
 // For POST requests, parse the JSON-encoded body.  The result is stored
 // in req.body. See POST "/test/maximum" example, below.
@@ -59,7 +59,7 @@ app.get("/test/maximum", function(req, res) {
 // Example GET request (including handling an error case).
 //
 app.get("/test/random", function(req, res) {
-   if (maxRandom == 0) {
+   if (maxRandom <= 0) {
       res.status(400).send("bad request (maximum not set)\n");
    }
    else {
