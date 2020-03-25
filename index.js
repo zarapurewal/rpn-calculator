@@ -141,6 +141,13 @@ app.listen(port, function() {
 
 var childProcess = require("child_process");
 
+/**
+ * Launch a child process to run make, copying its output (stdout and stderr) to
+ * out output.
+ *
+ * On "close", exit with whatever exit code the child process exited with.
+ */
+
 runTest = function(target) {
    make = childProcess.spawn("make", [target]);
 
