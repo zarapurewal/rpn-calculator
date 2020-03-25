@@ -37,7 +37,7 @@ get "/test/maximum" | grep -w 30 > /dev/null
 # Set the maximum to an invalid value (expecting "bad request" here).
 #
 echo
-echo setting the maximum to a couple of invalid values
+echo "setting the maximum to a couple of invalid values (expect 'bad request')..."
 echo "(these should fail)"
 ! post "/test/maximum" '{"maximum": -5}'
 ! post "/test/maximum" '{"maximum": "123"}'
