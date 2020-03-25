@@ -74,7 +74,7 @@ Explanation:
 ----
 
 ----
-POST /add
+GET /add
 
 Explanation:
   The two elements at the top of the stack are removed and the result of
@@ -86,7 +86,7 @@ Example:
 ----
 
 ----
-POST /subtract
+GET /subtract
 
 Explanation:
   The two elements at the top of the stack are removed and the result of
@@ -98,7 +98,7 @@ Example:
 ----
 
 ----
-POST /multiply
+GET /multiply
 
 Explanation:
   The two elements at the top of the stack are removed and the result of
@@ -110,7 +110,7 @@ Example:
 ----
 
 ----
-POST /divide
+GET /divide
 
 Explanation:
   The two elements at the top of the stack are removed and the result of
