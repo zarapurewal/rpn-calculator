@@ -1,5 +1,8 @@
 
-build: index.html
+ascii = $(wildcard *.ascii)
+html = $(patsubst %.ascii, %.html, $(ascii))
+
+build: $(html)
 	@true
 
 watch:
