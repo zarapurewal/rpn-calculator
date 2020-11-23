@@ -2,9 +2,9 @@
 # container.
 #
 
-# This would be "docker" on TermCast/docker (where the docker daemon
-# is running in a diffrent container).
-docker = localhost
+# This should be the host name of the dockerd server.
+#
+docker = docker
 port = 3306
 mysql = mysql -u root -h $(docker) --protocol=tcp
 

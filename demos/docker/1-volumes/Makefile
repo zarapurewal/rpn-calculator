@@ -4,9 +4,9 @@
 # the Apache container, and then fetch the files in this directory
 # from there.
 
-# This would be "docker" on TermCast/docker (where the docker daemon
-# is running in a diffrent container).
-docker = localhost
+# This should be the host name of the dockerd server.
+#
+docker = docker
 port = 8401
 
 run:
