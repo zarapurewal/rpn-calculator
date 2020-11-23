@@ -87,10 +87,11 @@ app.use(express.static('./static'));
  *   - Look carefully at the examples above.  Much of what you need to do
  *     can be achieved by copying and tweaking that code.
  *
- *   - stack = stack.concat(values)
- *   - stack.length (length of array "stack", like len(stack) in Python)
- *   - value = stack.pop()
- *   - stack.push(value)
+ *   - You will need these:
+ *       stack = stack.concat(values)
+ *       stack.length (length of array "stack", like len(stack) in Python)
+ *       value = stack.pop()
+ *       stack.push(value)
  *
  *   - For the /push request, the JSON body will already have been parsed by
  *     the body parser above.  You don't need to do anything special.  Just
@@ -101,8 +102,16 @@ var stack = [];
 
 /**
  * (You shouldn't have to change anything ABOVE here.)
- *
+ */
+
+/*
  * YOUR WORK GOES HERE!
+ *
+ * Note...
+ * The API above has endpoint names of the form "/test/____".
+ *
+ * The endpoint names below will not include "/test", so they'll be things
+ * like "/pop", or "/push".
  */
 
 /**
