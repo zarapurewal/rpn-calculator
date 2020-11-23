@@ -46,6 +46,21 @@ run-test-rpn:
 build:
 	$(MAKE) -C static build
 
+# If you have gitlab-runner locally, then you can test your .gitlab-ci.yml
+# configuration with these targets.
+#
+gitlab-shell:
+	gitlab-runner exec shell test
+
+
+# For docker, do not use the "smblott/dcu-docker-gitlab-ci" image.  Just use "node"
+# instead.  The node image doesn't contain asciidoc, of course, but you can test
+# everything else.
+#
+gitlab-docker:
+	gitlab-runner exec docker test
+
 .PHONY: run build
 .PHONY: test-random run-test-random
 .PHONY: test-rpn run-test-rpn
+.PHONY: gitlab-shell gitlab-docker

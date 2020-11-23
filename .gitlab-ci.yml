@@ -1,6 +1,10 @@
 # This image contains everything you need for this week's task.
 #
-image: "smblott/dcu-docker-gitlab-ci"
+# Use this for GitLab CI...
+# image: "smblott/dcu-docker-gitlab-ci"
+#
+# Use this for testing locally (no asciidoc)...
+image: node
 
 # We'll do everything in one stage, here.
 #
