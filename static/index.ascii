@@ -22,7 +22,7 @@ Explanation:
   Each value is pushed onto the stack in turn.
 
   Values are pushed from left to right (so, in the example, 2 is pushed
-  first and 17 is pushed.
+  first and 17 is pushed last.
 
 Note:
   This is a simplification.  It simply means that the entire list can be
@@ -30,12 +30,14 @@ Note:
 
 Tip:
   stack = stack.concat(data.values);
+
+  (That's how you implement /push.)
 ----
 
 ----
 GET /pop
 
-result (JSON encoded, although that's moot here):
+result (JSON encoded):
   "17"
 
 Explanation:

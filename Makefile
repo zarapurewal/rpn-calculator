@@ -10,6 +10,7 @@ run:
 	PORT=$(port) node index.js
 
 # Run the tests for the /test/random API.  This assumes that the server is running.
+# This will fail if the server is not running.
 #
 test-random:
 	PORT=$(port) bash test-random.sh
@@ -31,6 +32,9 @@ test-rpn:
 # This will fail if the server is already running!
 # This will also fail if you haven't yet implemented the necessary API.
 #
+# For developing the RPN API, this is the quickest way start the server, run the
+# tests, and stop the server again.
+#
 run-test-rpn:
 	PORT=$(port) node index.js test-rpn
 
@@ -42,9 +46,6 @@ run-test-rpn:
 build:
 	$(MAKE) -C static build
 
-.PHONY: run
-.PHONY: test-random
-.PHONY: run-test-random
-.PHONY: test-rpn
-.PHONY: run-test-rpn
-.PHONY: build
+.PHONY: run build
+.PHONY: test-random run-test-random
+.PHONY: test-rpn run-test-rpn

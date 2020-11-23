@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.computing.dcu.ie:sblott/2020-ca282-week-09.git"
+    "url": "git@gitlab.computing.dcu.ie:sblott/ca282-rpn-calculator.git"
   },
   "keywords": [
     "RPN",

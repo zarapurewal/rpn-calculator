@@ -1,3 +1,5 @@
+# This image contains everything you need for this week's task.
+#
 image: "smblott/dcu-docker-gitlab-ci"
 
 # We'll do everything in one stage, here.
