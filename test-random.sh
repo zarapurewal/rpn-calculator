@@ -3,7 +3,7 @@
 # This is a poor-man's test of the random-number generator (test API).
 # It requires "wget" and "curl".
 
-# PORT is set in Makefile, or defaults here to 6781 if the environment variable
+# PORT is set in Makefile, or defaults here to 8092 if the environment variable
 # PORT is not set.
 : ${PORT:=8092}
 

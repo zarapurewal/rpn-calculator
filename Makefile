@@ -38,6 +38,15 @@ test-rpn:
 run-test-rpn:
 	PORT=$(port) node index.js test-rpn
 
+# You shouldn't change test-rpn/01-tests.sh; but you can change test-rpn/user-tests.sh.
+# These targets run those tests.
+#
+user-tests:
+	cd test-rpn && PORT=$(port) bash user-tests.sh
+
+run-user-tests:
+	PORT=$(port) node index.js user-tests
+
 # Build the static HTML file.
 # Requires asciidoc.
 # If you don't have asciidoc, read the comment in the Makefile in the
@@ -63,4 +72,5 @@ gitlab-docker:
 .PHONY: run build
 .PHONY: test-random run-test-random
 .PHONY: test-rpn run-test-rpn
+.PHONY: user-tests run-user-tests
 .PHONY: gitlab-shell gitlab-docker
