@@ -23,8 +23,7 @@ const port = process.env.PORT || 8092;
  *
  * GET /test/random
  *
- *    This returns a random number.  It is an error to request a random
- *    number before the maximum has been set (see above).
+ *    Return a random number.
  */
 
 var maxRandom = 10;
