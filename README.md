@@ -25,12 +25,11 @@ If you do not have asciidoc, then read the comment in `static/Makefile`.
 Asciidoc, node and npm are available:
 
   - in the default CI image on GitLab,
-  - in the TermCast/docker environment, and
-  - on the student SSH server (available as regular TermCast).
+  - in the [TermCast/docker environment](https://termcast.computing.dcu.ie/docker/), and
+  - on the [student SSH server](https://termcast.computing.dcu.ie/).
 
-The advantage of working on the TermCast docker environment is that you won't be
-competing with your classmates for ports.  You can't all run your server on the
-default port at the same time.
+In the _TermCast/docker_ environment, you won't be competing with your classmates for
+ports.  (On a shared server, you can't all run your server on the default port at the same time.).
 
 ## What's here?
 
