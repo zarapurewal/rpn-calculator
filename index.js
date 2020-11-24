@@ -95,6 +95,8 @@ app.use(express.static('./static'));
  *   - For the /push request, the JSON body will already have been parsed by
  *     the body parser above.  You don't need to do anything special.  Just
  *     verify that req.body.values exists.
+ *
+ * The details of the required API are defined in static/index.(ascii|html).
  */
 
 var stack = [];
