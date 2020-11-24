@@ -20,7 +20,7 @@ or:
 $ cd static && make build
 ```
 
-If you do not have asciidoc, then read the comment in static/Makefile.
+If you do not have asciidoc, then read the comment in `static/Makefile`.
 
 Asciidoc, node and npm are available:
 
