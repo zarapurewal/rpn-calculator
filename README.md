@@ -8,13 +8,17 @@ To install the necessary npm modules, use:
 
     $ npm install
 
-To build the static/index.html file, use:
+To build the static/index.html file, use either:
 
-  - either
-    $ make -C static build
+```
+$ make -C static build
+```
 
-  - or:
-    $ cd static && make build
+or:
+
+```
+$ cd static && make build
+```
 
 If you do not have asciidoc, then read the comment in static/Makefile.
 
@@ -54,7 +58,7 @@ Your task is as follows:
 
 ## Note
 
-The demo API endpoints are of the form `/test/foobar`".
+The demo API endpoints are of the form `/test/foobar`.
 
 The RPN endpoints are of the form just `/foobar`.
 
