@@ -4,9 +4,9 @@
 
 # This should be the host name of the dockerd server.
 #
-docker = docker
+server = docker
 port = 3306
-mysql = mysql -u root -h $(docker) --protocol=tcp
+mysql = mysql -u root -h $(server) --protocol=tcp
 
 run:
 	$(MAKE) start
@@ -24,7 +24,7 @@ start:
 
 load:
 	echo "create database world99;" | $(mysql)
-	gunzip -c ./world99.dump.sql.gz | $(mysql)
+	gunzip -c ./world99.dump.sql.gz | $(mysql) world99
 
 test:
 	$(mysql) world99 < test.sql

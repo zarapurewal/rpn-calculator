@@ -6,7 +6,7 @@
 
 # This should be the host name of the dockerd server.
 #
-docker = docker
+server = docker
 port = 8401
 
 run:
@@ -23,11 +23,11 @@ start:
 	      httpd
 
 test:
-	wget -O - -q http://$(docker):$(port)/index.txt
+	wget -O - -q http://$(server):$(port)/index.txt
 	@echo
-	wget -O - -q http://$(docker):$(port)/nobody.txt
+	wget -O - -q http://$(server):$(port)/nobody.txt
 	@echo
-	wget -O - -q http://$(docker):$(port)/Makefile
+	wget -O - -q http://$(server):$(port)/Makefile
 
 stop:
 	docker container stop httpd
