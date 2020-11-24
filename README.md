@@ -51,3 +51,13 @@ Your task is as follows:
 2. Ensure `make run-test-rpn` succeeds.
 3. Complete the `.gitlab-ci.yml` CI config files such that the tests are run (and pass!) when you push
    your work to GitLab.
+
+## Updates
+
+If it proves necessary to update this repo in any way, then:
+
+```
+$ git remote add sblott https://gitlab.computing.dcu.ie/sblott/ca282-rpn-calculator.git
+$ git fetch sblott
+$ git merge sblott/master
+```
