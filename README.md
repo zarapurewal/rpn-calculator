@@ -52,6 +52,12 @@ Your task is as follows:
 3. Complete the `.gitlab-ci.yml` CI config files such that the tests are run (and pass!) when you push
    your work to GitLab.
 
+## Note
+
+The demo API endpoints are of the form `/test/foobar`".
+
+The RPN endpoints are of the form just `/foobar`.
+
 ## Updates
 
 If it proves necessary to update this repo in any way, then:
