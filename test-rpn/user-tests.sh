@@ -9,5 +9,7 @@ source "00-common.sh"
 #
 # For example:
 
-post "/push" '{"values": [123]}'
-get "/peek" 123
+post "/push" '{"values": [123, 456]}'
+# get "/peek" 456
+# get "/pop" 456
+# get "/peek" 123
