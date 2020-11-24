@@ -41,7 +41,7 @@ app.post("/test/maximum", function(req, res) {
    if ( req.body
         && req.body.hasOwnProperty("maximum")
         && Number.isInteger(req.body.maximum)
-        && 0 <= req.body.maximum ) {
+        && 0 < req.body.maximum ) {
       maxRandom = req.body.maximum;
       console.log("setting maximum to", maxRandom);
       res.send(`server... ok, setting maximum: ${maxRandom}\n`);
