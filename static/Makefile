@@ -13,7 +13,7 @@ watch:
 #
 # If you're testing this somewhere where asciidoc is not installed, then it is
 # enough to just copy the file "garbage.html" into "index.html".  That should
-# get you going.
+# get you going.  Comment and uncomment lines below as appropriate (if required).
 #
 %.html: %.ascii
 	asciidoc $<
