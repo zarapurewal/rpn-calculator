@@ -125,13 +125,20 @@ app.listen(port, function() {
    console.log("listening on port", port);
 
    /**
-    * Now, the server is up.
+    * Now, the server is running on "port".
     *
     * Next, if there is a command-line argument, then we'll run that
-    * as a test command via make (and then exit).
+    * as a test target via make, and then exit.
     *
-    * We're doing it this way, because this will be easy to automate in
-    * the CI environment.
+    * This simplifies testing because something like this:
+    *
+    *    $ node index.js users-tests
+    *
+    * or:
+    *
+    *    $ make run-user-tests
+    *
+    * starts the server, runs the tests, and stops the server again.
     */
 
    switch ( process.argv.length ) {
@@ -140,7 +147,7 @@ app.listen(port, function() {
 	 break;
       case 3:
 	 console.log("launching tests: make", process.argv[2]);
-	 runTest(process.argv[2]);
+	 runTest(process.argv[2]);  // This exits when it's done.
 	 break;
       default:
 	 // This is an error.
@@ -149,14 +156,14 @@ app.listen(port, function() {
    }
 });
 
-var childProcess = require("child_process");
-
 /**
  * Launch a child process to run make, copying its output (stdout and stderr) to
  * our output.
  *
  * On "close", exit with whatever exit code the child process exited with.
  */
+
+var childProcess = require("child_process");
 
 runTest = function(target) {
    make = childProcess.spawn("make", [target]);
