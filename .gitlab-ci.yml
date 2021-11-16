@@ -1,15 +1,14 @@
 # This image contains everything you need for this week's task.
 #
 # Use this for GitLab CI...
-# image: "smblott/dcu-docker-gitlab-ci"
-#
-# Use this for testing locally (no asciidoc)...
-image: node
+image: "smblott/dcu-docker-gitlab-ci"
 
 # We'll do everything in one stage, here.
 #
+# When you're done, remove the word "echo" below, so that the
+# actual RPN tests run.
+#
 test:
    script:
-      - echo FIXME... build static/index.html
-      - echo FIXME... install node modules
-      - echo FIXME... run tests
+      - make run-test-random
+      - echo make run-test-rpn
