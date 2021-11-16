@@ -2,8 +2,10 @@
 
 source "00-common.sh"
 
-#
-# Don't change anything here.
+# ************************
+# DO NOT CHANGE THIS FILE.
+# ************************
+
 #
 # However, for your own testing, you might like to copy the ideas here
 # and tweak them to initially test just fragments of the API.

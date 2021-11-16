@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# ************************
+# DO NOT CHANGE THIS FILE.
+# ************************
+
 #
 # You should not need to change anything in here.
 #
