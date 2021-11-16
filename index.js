@@ -146,6 +146,8 @@ app.listen(port, function() {
 	 // OK.  There's nothing to do here.  Just leave the server running.
 	 break;
       case 3:
+         // There is exactly one command-line argument.  We treat that as a make
+         // target for running tests.
 	 console.log("launching tests: make", process.argv[2]);
 	 runTest(process.argv[2]);  // This exits when it's done.
 	 break;
@@ -177,6 +179,7 @@ runTest = function(target) {
    });
 
    make.on("close", function(code) {
+      // We're done, so exit (which also stops the server).
       process.exit(code);
    });
 }
