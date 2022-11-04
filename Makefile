@@ -14,6 +14,7 @@ node-modules:
 # Perhaps flip the order of these to change the default test target.
 #
 default_test_target = rpn
+default_test_target = docker
 default_test_target = random
 
 test:
@@ -36,10 +37,10 @@ up:
 	docker compose build
 	docker compose up --detach
 
-docker-test:
+docker:
 	$(MAKE) -C tests docker
 
 down:
 	docker compose down -t 1
 
-.PHONY: up down docker-test
+.PHONY: up docker down
