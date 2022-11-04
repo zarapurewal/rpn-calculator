@@ -122,6 +122,9 @@ Explanation:
   The two elements at the top of the stack are removed and the result of
   dividing them is pushed onto the stack.
 
+  Division should be integer division, with floating-point results rounded
+  down to the nearest integer.
+
 Example:
   before: 674, 20, 5
   after: 674, 4
