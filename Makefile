@@ -17,14 +17,14 @@ default_test_target = rpn
 default_test_target = random
 
 test:
-	$(MAKE) -s test-$(default_test_target)
+	$(MAKE) -s $(default_test_target)
 
-test-random:
+random:
 	zsh misc/check-for-node_modules.zsh
 	$(MAKE) -C tests random
 
-test-rpn:
+rpn:
 	zsh misc/check-for-node_modules.zsh
 	$(MAKE) -C tests rpn
 
-.PHONY: run node-modules test-random test-rpn test
+.PHONY: run node-modules random rpn test
