@@ -28,7 +28,13 @@ rpn:
 	zsh misc/check-for-node_modules.zsh
 	$(MAKE) -C tests rpn
 
-.PHONY: run node-modules random rpn test
+# This runs an ad hoc, homebrew test written in zsh; it assumes that the server
+# is already running.
+#
+quick:
+	zsh misc/api-test.zsh
+
+.PHONY: run node-modules random rpn test quick
 
 # #################################################################
 # These targets are for task 3.

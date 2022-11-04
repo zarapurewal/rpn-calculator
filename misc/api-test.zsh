@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+# ************
+# This assumes that the server is already running and listening on port 8000.
+# ************
+
 set -e
 
 url="http://localhost:8000"
