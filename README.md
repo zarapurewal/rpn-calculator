@@ -4,7 +4,7 @@ When you are done, push your work back to the `master` branch in your project on
 
 ### Node modules
 
-This is an node project.  It depends upon a number of node modules.
+This is a node project.  It depends upon a number of node modules.
 
 To install the necessary node modules, use:
 
@@ -16,12 +16,61 @@ modules which are required for this project.
 The `make` targets in this directory try to ensure that `npm install` has been run, but it's probably best not
 to rely on that.
 
+### Background
+
+This is a node/express project.  It implements a number of HTTP endpoints.
+
+It contains a demo random number generator (see `index.js`).  The endpoints are:
+
+- `/test/maximum` (GET): get the current *maximum* value
+- `/test/maximum` (PUSH): set the current *maximum* value
+- `/test/random` (GET): get a random integer between 0 (inclusive) and *maximum* (exclusive)
+
+There are tests in the `tests` directory.
+
+One set of tests uses [mocha](https://www.npmjs.com/package/mocha) and [chai](https://www.npmjs.com/package/chai).
+
+Run these tests with:
+
+    $ make random
+
+A second set of tests is just shell script and is more suitable for quick testing.
+
+Run the quick test by starting the server in one terminal:
+
+    $ make run
+
+And running the tests with:
+
+    $ make quick
+
+Note: this will initially fail, if you haven't yet implemented all of the necessary HTTP endpoints.
+
+### Interactive development
+
+You will have to restart your server quite frequently.
+
+The `make` target `watch` in this directory uses `nodemon` to automatically restart the server whenever you
+save `index.js`.
+
+    $ make watch
+
+I suggest running `make watch` in one terminal, and editing and running `make quick` in another.
+
 ### Task 1
+
+An RPN calculator is a calculator for which the operands precede the operators.
 
 Extend the implementation in `index.js` such that it implements the RPN-calculator API described in
 [static/README.md](static/README.md).
 
-Ensure that `make rpn` (which runs the RPN calculator tests) succeeds.
+You will have to add a number of HTTP endpoints to `index.js` (`/push`, `/peek`, `/pop`, `/add` and so on).
+
+Ensure that `make quick` (which runs home-brew zsh tests) succeeds.
+
+Ensure that `make rpn` (which runs the mocha RPN calculator tests) succeeds.
+
+You should not make any changes to the tests themselves.
 
 ### Task 2
 
