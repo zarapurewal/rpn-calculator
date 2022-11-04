@@ -105,7 +105,7 @@ Your task is to:
    don't forget to include the necessary `node_modules` in your image, and
 2. complete the `docker-compose.yml` file in this directory to bring up a container running your image.
 
-You should map port 8000 on localhost to whichever port your app is listening on inside the container
+You should map port 8000 on `localhost` to whichever port your app is listening on inside the container
 (probably also port 8000).
 
 This task is very similar to one of the tasks in last week's "docker demo" repo.
