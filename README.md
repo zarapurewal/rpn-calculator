@@ -87,7 +87,7 @@ Do not proceed to this task until you have successfully completed task 1 (task 2
 
 Look at the bottom of the `Makefile` in this directory, specifically the targets `up`, `docker` and `down`.
 
-I will run these three targets as:
+For testing, I will run these three targets as:
 
 ```
 $ make up
