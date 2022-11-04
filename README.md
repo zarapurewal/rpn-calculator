@@ -17,7 +17,6 @@ Extend the implementation in `index.js` such that it implements the RPN-calculat
 
 Ensure that `make rpn` (which runs the RPN calculator tests) succeeds.
 
-
 ## Task 2
 
 Do not proceed to this task until you have successfully completed task 1.

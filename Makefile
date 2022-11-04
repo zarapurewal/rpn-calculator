@@ -8,6 +8,12 @@ run:
 	zsh misc/check-for-node_modules.zsh
 	node index.js
 
+# This runs the server, and restarts it whenever you save `index.js`.
+#
+watch:
+	zsh misc/check-for-node_modules.zsh
+	nodemon
+
 node-modules:
 	zsh misc/check-for-node_modules.zsh
 
