@@ -135,7 +135,7 @@ app.listen(port, function() {
    */
    argv = process.argv.slice(2);
    if ( 0 < argv.length ) {
-      console.log("launching tests: ", argv);
+      console.log("launching tests:", argv);
 
       childProcess = require("child_process");
       proc = childProcess.spawn(argv[0], argv.slice(1));  // Run a command as a sub-process.
@@ -143,7 +143,7 @@ app.listen(port, function() {
       proc.stderr.pipe(process.stderr);                   // Pipe its errors to standard error.
 
       proc.on("close", function(code) {
-         console.log("tests exited: ", code);
+         console.log("tests exited:", code);
          process.exit(code);                              // Exit when the tests exit.
       });
    }

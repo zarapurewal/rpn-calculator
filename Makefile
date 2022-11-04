@@ -5,13 +5,20 @@
 port = 8000
 
 coffeescript = ./node_modules/.bin/coffee
+nodemon = ./node_modules/.bin/nodemon
 
 # Run the server.
 #
-run: $(coffeescript)
+run: $(nodemon)
 	PORT=$(port) node index.js
 
-$(coffeescript):
+$(nodemon):
 	npm install
 
-.PHONY: run test
+test: $(nodemon)
+	PORT=$(port) node index.js $(coffeescript) test.coffee
+
+dev:
+	$(nodemon) -w index.js -w test.coffee -x "make -s test || exit 1"
+
+.PHONY: run test dev

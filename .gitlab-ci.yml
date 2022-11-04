@@ -1,10 +1,6 @@
-# ************************
-# DO NOT CHANGE THIS FILE.
-# ************************
-
 image: "smblott/dcu-docker-gitlab-ci"
 
 test:
    script:
-      - make run-test-random
-      - make run-test-rpn
+      - echo replace these commands such that the tests
+      - echo are run in the CI environment on GitLab
