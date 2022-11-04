@@ -20,10 +20,16 @@ random:
 rpn:
 	../node_modules/.bin/mocha ./rpn.coffee --exit --bail --require coffeescript/register
 
+# This runs an ad hoc, homebrew test written in zsh; it assumes that the server
+# is already running.
+#
+quick:
+	zsh ./quick-api-test.zsh
+
 # This tests the "rpn" API by using an *existing server* on port 8000, possibly a docker container;
 # it is used for task 3.
 #
 docker:
 	env DOCKER=yes ../node_modules/.bin/mocha ./rpn.coffee --exit --bail --require coffeescript/register
 
-.PHONY: test random rpn docker
+.PHONY: test random rpn docker quick

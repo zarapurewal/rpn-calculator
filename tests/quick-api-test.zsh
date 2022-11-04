@@ -12,14 +12,14 @@ get () {
   local pathname=$argv[1]
   local full_url="$url$pathname"
   print ">>>" "GET" $full_url
-  wget -O - -q $full_url | jq .
+  wget --timeout 2 -O - -q $full_url | jq .
 }
 
 post () {
   local pathname=$argv[1]
   local full_url="$url$pathname"
   print ">>>" POST $full_url
-  curl -H "Content-Type: application/json" -d $argv[2] -X "POST" $full_url
+  curl --max-time 2 -H "Content-Type: application/json" -d $argv[2] -X "POST" $full_url
 }
 
 # Test the /test (random) API.

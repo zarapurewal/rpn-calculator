@@ -32,7 +32,7 @@ rpn:
 # is already running.
 #
 quick:
-	zsh misc/api-test.zsh
+	zsh tests/quick-api-test.zsh
 
 .PHONY: run node-modules random rpn test quick
 
