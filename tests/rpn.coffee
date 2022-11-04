@@ -8,7 +8,13 @@ chai.use require "chai-http"
 should = chai.should()
 assert = chai.assert
 
-server = require "../index"
+# Set the environment variable DOCKER (see Makefile) to use a server hosted in
+# docker for the tests; otherwise launch the server in "../index.js" (the default).
+#
+if process.env.DOCKER
+  server = "http://localhost:8000"
+else
+  server = require "../index"
 
 # Mocha can work either with promises or with callbacks (but not both).
 # Some calls below are wrapped with this function to ensure that the

@@ -14,4 +14,7 @@ random:
 rpn:
 	../node_modules/.bin/mocha ./rpn.coffee --exit --bail --require coffeescript/register
 
-.PHONY: test random rpn
+docker:
+	env DOCKER=yes ../node_modules/.bin/mocha ./rpn.coffee --exit --bail --require coffeescript/register
+
+.PHONY: test random rpn docker
