@@ -4,7 +4,8 @@
   "description": "Test repo for CA282 week 9.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test",
+    "run": "make run"
   },
   "repository": {
     "type": "git",
@@ -15,7 +16,7 @@
     "calculator",
     "CA282"
   ],
-  "author": "Various",
+  "author": "Stephen Blott",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.6",
