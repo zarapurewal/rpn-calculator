@@ -18,7 +18,7 @@ to rely on that.
 
 ### Background
 
-This is a node/express project.  It implements a number of HTTP endpoints.
+This is a node/express project.  It is a web server which implements a number of HTTP endpoints.
 
 It contains a demo random number generator (see `index.js`).  The endpoints are:
 
