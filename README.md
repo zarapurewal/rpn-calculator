@@ -15,7 +15,7 @@ To install the necessary npm modules, use:
 Extend the implementation in `index.js` such that it implements the RPN-calculator API described in
 [static/README.md](static/README.md).
 
-Ensure that `make rpn` (which runs the RPN calculator rests) succeeds.
+Ensure that `make rpn` (which runs the RPN calculator tests) succeeds.
 
 
 ## Task 2
@@ -25,7 +25,7 @@ Do not proceed to this task until you have successfully completed task 1.
 Complete the `.gitlab-ci.yml` CI config files such that the `random` **and** `rpn` tests
 are run (and pass!) when you push your work to GitLab.
 
-Check under "CI/CD" / "Jobs" on GitLab.  Fix any issues which arise.
+Check under "CI/CD" / "Jobs" on GitLab.  Fix any issues which arise (although there really shouldn't be any).
 
 ## Task 3
 
