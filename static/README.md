@@ -1,16 +1,8 @@
-= Node/Express RPN calculator
+## API
 
-// //////////////////////////////////////////////////////////////
-== API
-
-****
 This is a node/express-based RPN calculator.
 
-That's pretty boring, but it does demonstrate how we can build a web-based
-(HTTP) API using a Javascript/node server.
-****
-
-----
+```
 POST /push
 
 data (JSON encoded):
@@ -32,9 +24,9 @@ Tip:
   stack = stack.concat(data.values);
 
   (That's how you implement /push.)
-----
+```
 
-----
+```
 GET /pop
 
 result (JSON encoded):
@@ -48,9 +40,9 @@ Tip:
   res.send(JSON.stringify(stack.pop()))
 
   (But you had better check first that the array/stack isn't empty.)
-----
+```
 
-----
+```
 GET /length
 
 result (JSON encoded):
@@ -62,9 +54,9 @@ Explanation:
 
 Tip:
   res.send(JSON.stringify(stack.length))
-----
+```
 
-----
+```
 GET /peek
 
 result (JSON encoded):
@@ -73,9 +65,9 @@ result (JSON encoded):
 Explanation:
   The value 329 is at the top of the stack, so it is  returned as the
   result of the GET request.  The stack is *unchanged*.
-----
+```
 
-----
+```
 GET /add
 
 Explanation:
@@ -85,9 +77,9 @@ Explanation:
 Example:
   before: 674, 20, 5
   after: 674, 25
-----
+```
 
-----
+```
 GET /subtract
 
 Explanation:
@@ -97,9 +89,9 @@ Explanation:
 Example:
   before: 674, 20, 5
   after: 674, 15
-----
+```
 
-----
+```
 GET /multiply
 
 Explanation:
@@ -109,9 +101,9 @@ Explanation:
 Example:
   before: 674, 20, 5
   after: 674, 100
-----
+```
 
-----
+```
 GET /divide
 
 Explanation:
@@ -121,19 +113,11 @@ Explanation:
 Example:
   before: 674, 20, 5
   after: 674, 4
-----
+```
 
-// //////////////////////////////////////////////////////////////
-=== Errors
+## Errors
 
-****
 In the case of errors (e.g. insufficient arguments on the stack, or invalid
 arguments), an HTTP response of 400 (bad request) should be returned.
 
 Otherwise, an HTTP response 200 (ok) should be returned.
-****
-
-//
-//vim: ft=asciidoc
-//
-
