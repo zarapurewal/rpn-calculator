@@ -41,6 +41,17 @@ Tip:
 ```
 
 ```
+GET /peek
+
+result (JSON encoded):
+  "329"
+
+Explanation:
+  The value 329 is at the top of the stack, so it is  returned as the
+  result of the GET request.  The stack is *unchanged*.
+```
+
+```
 GET /pop
 
 result (JSON encoded):
@@ -54,17 +65,6 @@ Tip:
   res.send(JSON.stringify(stack.pop()))
 
   (But you had better check first that the array/stack isn't empty.)
-```
-
-```
-GET /peek
-
-result (JSON encoded):
-  "329"
-
-Explanation:
-  The value 329 is at the top of the stack, so it is  returned as the
-  result of the GET request.  The stack is *unchanged*.
 ```
 
 ```
