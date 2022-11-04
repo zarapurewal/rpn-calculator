@@ -31,7 +31,7 @@ Check under "CI/CD" / "Jobs" on GitLab.  Fix any issues which arise (although th
 
 Do not proceed to this task until you have successfully completed task 1 (task 2 doesn't matter).
 
-Look at the bottom of the `Makrefile` in this directory, targets `up`, `docker` and `down`.
+Look at the bottom of the `Makefile` in this directory, specifically the targets `up`, `docker` and `down`.
 
 I will run these three targets as:
 
