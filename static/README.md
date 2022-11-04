@@ -70,6 +70,9 @@ Tip:
 ```
 GET /add
 
+result (JSON encoded):
+  ""
+
 Explanation:
   The two elements at the top of the stack are removed and the result of
   adding them together is pushed onto the stack.
@@ -81,6 +84,9 @@ Example:
 
 ```
 GET /subtract
+
+result (JSON encoded):
+  ""
 
 Explanation:
   The two elements at the top of the stack are removed and the result of
@@ -94,6 +100,9 @@ Example:
 ```
 GET /multiply
 
+result (JSON encoded):
+  ""
+
 Explanation:
   The two elements at the top of the stack are removed and the result of
   multiplying them together is pushed onto the stack.
@@ -105,6 +114,9 @@ Example:
 
 ```
 GET /divide
+
+result (JSON encoded):
+  ""
 
 Explanation:
   The two elements at the top of the stack are removed and the result of
