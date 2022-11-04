@@ -28,3 +28,18 @@ rpn:
 	$(MAKE) -C tests rpn
 
 .PHONY: run node-modules random rpn test
+
+# #################################################################
+# These targets are for task 3.
+
+up:
+	docker compose build
+	docker compose up --detach
+
+docker-test:
+	$(MAKE) -C tests docker
+
+down:
+	docker compose down -t 1
+
+.PHONY: up down docker-test

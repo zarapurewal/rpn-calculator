@@ -8,12 +8,21 @@ default_target = random
 test:
 	@$(MAKE) $(default_target)
 
+# This tests the "random" API by bringing up a local server, running the tests, then stopping
+# the server.
+#
 random:
 	../node_modules/.bin/mocha ./random.coffee --exit --bail --require coffeescript/register
 
+# This tests the "rpn" API by bringing up a local server, running the tests, then stopping the
+# server.
+#
 rpn:
 	../node_modules/.bin/mocha ./rpn.coffee --exit --bail --require coffeescript/register
 
+# This tests the "rpn" API by using an *existing server* on port 8000, possibly a docker container;
+# it is used for task 3.
+#
 docker:
 	env DOCKER=yes ../node_modules/.bin/mocha ./rpn.coffee --exit --bail --require coffeescript/register
 
