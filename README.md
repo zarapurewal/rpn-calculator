@@ -2,22 +2,28 @@ Fork and clone this repo.
 
 When you are done, push your work back to the `master` branch in your project on GitLab.
 
-## Node modules
+### Node modules
 
-This is an npm project.  It depends upon a number of npm modules.
+This is an node project.  It depends upon a number of node modules.
 
-To install the necessary npm modules, use:
+To install the necessary node modules, use:
 
     $ npm install
 
-## Task 1
+`npm` is the *node package manager*.  This creates a directory `node_modules` containing all of the node
+modules which are required for this project.
+
+The `make` targets in this directory try to ensure that `npm install` has been run, but it's probably best not
+to rely on that.
+
+### Task 1
 
 Extend the implementation in `index.js` such that it implements the RPN-calculator API described in
 [static/README.md](static/README.md).
 
 Ensure that `make rpn` (which runs the RPN calculator tests) succeeds.
 
-## Task 2
+### Task 2
 
 Do not proceed to this task until you have successfully completed task 1.
 
@@ -26,7 +32,7 @@ are run (and pass!) when you push your work to GitLab.
 
 Check under "CI/CD" / "Jobs" on GitLab.  Fix any issues which arise (although there really shouldn't be any).
 
-## Task 3
+### Task 3
 
 Do not proceed to this task until you have successfully completed task 1 (task 2 doesn't matter).
 
