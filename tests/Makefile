@@ -6,7 +6,7 @@ default_target = rpn
 default_target = random
 
 test:
-	-$(MAKE) $(default_target)
+	@$(MAKE) $(default_target)
 
 random:
 	../node_modules/.bin/mocha ./random.coffee --exit --bail --require coffeescript/register
