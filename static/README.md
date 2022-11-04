@@ -27,6 +27,20 @@ Tip:
 ```
 
 ```
+GET /length
+
+result (JSON encoded):
+  "5"
+
+Explanation:
+  Return the length of the stack.  (There are currently five elements on
+  the stack.)
+
+Tip:
+  res.send(JSON.stringify(stack.length))
+```
+
+```
 GET /pop
 
 result (JSON encoded):
@@ -40,20 +54,6 @@ Tip:
   res.send(JSON.stringify(stack.pop()))
 
   (But you had better check first that the array/stack isn't empty.)
-```
-
-```
-GET /length
-
-result (JSON encoded):
-  "5"
-
-Explanation:
-  Return the length of the stack.  (There are currently five elements on
-  the stack.)
-
-Tip:
-  res.send(JSON.stringify(stack.length))
 ```
 
 ```
