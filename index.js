@@ -41,7 +41,8 @@ app.post("/test/maximum", function(req, res) {
         && Number.isInteger(req.body.maximum)
         && 0 < req.body.maximum ) {
       maxRandom = req.body.maximum;
-      console.log("setting maximum to", maxRandom);
+      console.log("server: setting maximum to", maxRandom);
+      res.setHeader("Content-Type", "text/plain");
       res.send(`server... ok, setting maximum: ${maxRandom}\n`);
    }
    else {
@@ -50,6 +51,8 @@ app.post("/test/maximum", function(req, res) {
 });
 
 app.get("/test/maximum", function(req, res) {
+   console.log("server: getting maximum", maxRandom);
+   res.setHeader("Content-Type", "application/json");
    response = { maximum: maxRandom };
    res.send(JSON.stringify(response));
 });
@@ -63,6 +66,7 @@ app.get("/test/random", function(req, res) {
    else {
       var r = Math.floor(Math.random() * maxRandom);
       console.log("server... sending random:", r);
+      res.setHeader("Content-Type", "application/json");
       res.send(JSON.stringify(r) + "\n");
    }
 });
@@ -126,25 +130,6 @@ var stack = [];
 
 app.listen(port, function() {
    console.log("listening on port", port, "...");
-
-  /**
-   * If there are any addititional arguments, then they are a test command to run.
-   * Run that command then exit when it exits.
-   *
-   * This makes it easy to start the server, run the tests, then exit.
-   */
-   argv = process.argv.slice(2);
-   if ( 0 < argv.length ) {
-      console.log("launching tests:", argv);
-
-      childProcess = require("child_process");
-      proc = childProcess.spawn(argv[0], argv.slice(1));  // Run a command as a sub-process.
-      proc.stdout.pipe(process.stdout);                   // Pipe its output to standard output.
-      proc.stderr.pipe(process.stderr);                   // Pipe its errors to standard error.
-
-      proc.on("close", function(code) {
-         console.log("tests exited:", code);
-         process.exit(code);                              // Exit when the tests exit.
-      });
-   }
 });
+
+module.exports = app
