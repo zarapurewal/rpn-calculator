@@ -108,4 +108,4 @@ Your task is to:
 You should map port 8000 on `localhost` to whichever port your app is listening on inside the container
 (probably also port 8000).
 
-This task is very similar to one of the tasks in last week's "docker demo" repo.
+This task is very similar to one of the tasks in last week's `ca282-docker-demo` repo.
