@@ -12,7 +12,8 @@ To install the necessary npm modules, use:
 
 ## Task 1
 
-Extend the implementation in `index.js` such that it implements the RPN-calculator API described in static/README.md.
+Extend the implementation in `index.js` such that it implements the RPN-calculator API described in
+[static/README.md](static/README.md).
 
 Ensure that `make rpn` (which runs the RPN calculator rests) succeeds.
 
