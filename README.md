@@ -109,3 +109,5 @@ You should map port 8000 on `localhost` to whichever port your app is listening 
 (probably also port 8000).
 
 This task is very similar to one of the tasks in last week's `ca282-docker-demo` repo.
+
+When you are done, push your work back to the `master` branch in your project on GitLab.
