@@ -48,7 +48,6 @@ app.post("/test/maximum", function(req, res) {
     res.send(`server... ok, setting maximum: ${maxRandom}\n`);
   }
   else {
-    console.log(req.body);
     res.status(400).send("bad request (invalid maximum value)\n");
   }
 });
