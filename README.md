@@ -34,13 +34,13 @@ Run these tests with:
 
     $ make random
 
-A second set of tests is just shell script and is more suitable for quick testing.
+A second set of "quick" tests is just a shell script and is more suitable for quick testing.
 
-Run the quick test by starting the server in one terminal:
+Run the quick test by first starting the server in one terminal:
 
     $ make run
 
-And running the tests with:
+And then running the tests in another terminal with:
 
     $ make quick
 
@@ -62,7 +62,7 @@ I suggest running `make watch` in one terminal, and editing and running `make qu
 An RPN calculator is a calculator for which the operands precede the operators.
 
 Extend the implementation in `index.js` such that it implements the RPN-calculator API described in
-[static/README.md](static/README.md).
+[./RPN.md](./RPN.md).
 
 You will have to add a number of HTTP endpoints to `index.js` (`/push`, `/peek`, `/pop`, `/add` and so on).
 

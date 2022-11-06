@@ -104,7 +104,7 @@ app.use(express.static('./static'));
 var stack = [];
 
 app.post("/push", function(req, res) {
-  // This seems like the obvious place to start.
+  // this seems like the obvious place to start.
 });
 
 
@@ -142,8 +142,11 @@ app.post("/push", function(req, res) {
  *
  * (You shouldn't have to change anything BELOW here.)
  *
- * Start the server on the indicated port.
+ * 404/not found, and start the server on the indicated port.
  */
+
+app.post("/*", function(req, res) { res.status(404).send("not found\n"); });
+app.get("/*", function(req, res) { res.status(404).send("not found\n"); });
 
 app.listen(port, function() {
   console.log("listening on port", port, "...");
