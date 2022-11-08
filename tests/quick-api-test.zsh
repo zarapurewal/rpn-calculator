@@ -4,6 +4,18 @@
 # This assumes that the server is already running and listening on port 8000.
 # ************
 
+cat <<EOF
+
+***************************************************
+
+Make sure that the server is running on port 8000 before running these tests.
+
+***************************************************
+
+First running some tests on the /test/random API...
+
+EOF
+
 set -e
 
 url="http://localhost:8000"
@@ -33,6 +45,15 @@ get "/test/random"
 
 # Test the RPN API.
 #
+
+cat <<EOF
+
+***************************************************
+
+Now running some tests on the /rpn API...
+
+EOF
+
 post "/push" '{"values": [150, 46, 3, 9, 3]}'
 
 fail () {
