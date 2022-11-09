@@ -108,17 +108,6 @@ app.use(express.static('./static'));
 //
 var stack = [];
 
-
-
-
-
-
-
-
-
-
-
-
 /**
  * (You shouldn't have to change anything ABOVE here.)
  */
@@ -215,8 +204,7 @@ app.get("/multiply", function(req, res) {
     res.status(400).send("bad request (stack empty)\n");
   }
   else {
-    value1 = stack.pop();
-    result = stack.pop() * value1;
+    result = stack.pop() * stack.pop();
     stack.push(result)
     console.log("server... popping top of stack:", result);
     res.setHeader("Content-Type", "application/json");
