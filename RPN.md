@@ -71,7 +71,7 @@ Tip:
 ```
 GET /add
 
-result (JSON encoded):
+result:
   ""
 
 Explanation:
@@ -86,7 +86,7 @@ Example:
 ```
 GET /subtract
 
-result (JSON encoded):
+result:
   ""
 
 Explanation:
@@ -101,7 +101,7 @@ Example:
 ```
 GET /multiply
 
-result (JSON encoded):
+result:
   ""
 
 Explanation:
@@ -116,7 +116,7 @@ Example:
 ```
 GET /divide
 
-result (JSON encoded):
+result:
   ""
 
 Explanation:
