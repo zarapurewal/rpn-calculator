@@ -1,4 +1,3 @@
-// **************************************************
 // Your changes for task 1 go in this file.
 //
 // See below.
@@ -109,10 +108,6 @@ app.use(express.static('./static'));
 //
 var stack = [];
 
-app.post("/push", function(req, res) {
-  // this seems like the obvious place to start.
-});
-
 
 
 
@@ -139,10 +134,109 @@ app.post("/push", function(req, res) {
  */
 
 
+app.post("/push", function(req, res) {
+  if ( req.body
+       && req.body.hasOwnProperty("values")
+       && Array.isArray(req.body.values)){
+    values = req.body.values;
+    stack = stack.concat(values);
+    console.log("server: pushing values", values);
+    res.setHeader("Content-Type", "text/plain");
+    res.send(`server... ok, making values: ${values}\n`);
+  }
+  else {
+    res.status(400).send("bad request (invalid values)\n");
+  }
+});
 
 
+app.get("/length", function(req, res) {
+  value = stack.length;
+  console.log("server: getting lenght", value);
+  res.setHeader("Content-Type", "application/json");
+  res.send(JSON.stringify(value));
+});
 
 
+app.get("/peek", function(req, res) {
+  if (stack.length == 0) {
+    res.status(400).send("bad request (stack empty)\n");
+  }
+  else {
+    value = stack[stack.length - 1]
+    console.log("server... sending first item:", value);
+    res.setHeader("Content-Type", "application/json");
+    res.send(JSON.stringify(value) + "\n");
+  }
+});
+
+app.get("/pop", function(req, res) {
+  if (stack.lenght == 0) {
+    res.status(400).send("bad request (stack empty)\n");
+  }
+  else {
+    value = stack.pop();
+    console.log("server... popping top of stack:", value);
+    res.setHeader("Content-Type", "application/json");
+    res.send(JSON.stringify(value) + "\n");
+  }
+});
+
+app.get("/add", function(req, res) {
+  if (stack.lenght == 0) {
+    res.status(400).send("bad request (stack empty)\n");
+  }
+  else {
+    value1 = stack.pop();
+    result = stack.pop() + value1;
+    stack.push(result)
+    console.log("server... popping top of stack:", result);
+    res.setHeader("Content-Type", "application/json");
+    res.send("");
+  }
+});
+
+app.get("/subtract", function(req, res) {
+  if (stack.lenght == 0) {
+    res.status(400).send("bad request (stack empty)\n");
+  }
+  else {
+    value1 = stack.pop();
+    result = stack.pop() - value1;
+    stack.push(result)
+    console.log("server... popping top of stack:", result);
+    res.setHeader("Content-Type", "application/json");
+    res.send("");
+  }
+});
+
+app.get("/multiply", function(req, res) {
+  if (stack.lenght == 0) {
+    res.status(400).send("bad request (stack empty)\n");
+  }
+  else {
+    value1 = stack.pop();
+    result = stack.pop() * value1;
+    stack.push(result)
+    console.log("server... popping top of stack:", result);
+    res.setHeader("Content-Type", "application/json");
+    res.send("");
+  }
+});
+
+app.get("/divide", function(req, res) {
+  if (stack.lenght == 0) {
+    res.status(400).send("bad request (stack empty)\n");
+  }
+  else {
+    value1 = stack.pop();
+    result = stack.pop() / value1;
+    stack.push(result)
+    console.log("server... popping top of stack:", result);
+    res.setHeader("Content-Type", "application/json");
+    res.send("");
+  }
+});
 /**
  * YOUR WORK GOES **ABOVE** HERE.
  *
@@ -159,3 +253,4 @@ app.listen(port, function() {
 });
 
 module.exports = app
+

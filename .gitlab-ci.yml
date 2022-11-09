@@ -10,5 +10,5 @@ image: "smblott/dcu-docker-gitlab-ci"
 
 test:
    script:
-      - echo replace these commands such that the tests
-      - echo are run in the CI environment on GitLab
+      - make run-test-random
+      - make run-test-rpn
