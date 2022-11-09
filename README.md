@@ -72,6 +72,8 @@ Ensure that `make rpn` (which runs the mocha RPN calculator tests) succeeds.
 
 You should not make any changes to the tests themselves.
 
+The only file which you need to changes in `index.js`.
+
 ### Task 2
 
 Do not proceed to this task until you have successfully completed task 1.
@@ -80,6 +82,8 @@ Complete the `.gitlab-ci.yml` CI config files such that the `random` **and** `rp
 are run (and pass!) when you push your work to GitLab.
 
 Check under "CI/CD" / "Jobs" on GitLab.  Fix any issues which arise (although there really shouldn't be any).
+
+The only file which you need to changes in `.gitlab-ci.yml`.
 
 ### Task 3
 
@@ -111,3 +115,6 @@ You should map port 8000 on `localhost` to whichever port your app is listening 
 This task is very similar to one of the tasks in last week's `ca282-docker-demo` repo.
 
 When you are done, push your work back to the `master` branch in your project on GitLab.
+
+The only files which you need to changes in `Dockerfile` and `docker-compose.yml`.
+
