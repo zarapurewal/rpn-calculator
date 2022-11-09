@@ -120,5 +120,5 @@ This task is very similar to one of the tasks in last week's `ca282-docker-demo`
 
 When you are done, push your work back to the `master` branch in your project on GitLab.
 
-The only files which you need to changes in `Dockerfile` and `docker-compose.yml`.
+The only files which you need to change are `Dockerfile` and `docker-compose.yml`.
 
