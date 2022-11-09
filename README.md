@@ -74,6 +74,10 @@ You should not make any changes to the tests themselves.
 
 The only file which you need to changes in `index.js`.
 
+Marking... this must succeed:
+
+    $ make rpn
+
 ### Task 2
 
 Do not proceed to this task until you have successfully completed task 1.
@@ -85,19 +89,19 @@ Check under "CI/CD" / "Jobs" on GitLab.  Fix any issues which arise (although th
 
 The only file which you need to changes in `.gitlab-ci.yml`.
 
+Marking... I will examine your `.gitlab-ci.yml` manually.
+
 ### Task 3
 
 Do not proceed to this task until you have successfully completed task 1 (task 2 doesn't matter).
 
 Look at the bottom of the `Makefile` in this directory, specifically the targets `up`, `docker` and `down`.
 
-For testing, I will run these three targets as:
+Marking... this must succeed:
 
-```
-$ make up
-$ make docker
-$ make down
-```
+    $ make up
+    $ make docker
+    $ make down
 
 - `up` uses `docker compose` to bring up a docker container.
 - `docker` runs the same RPN tests as before, but this time against an existing server running on port 8000; this will be your server running inside a docker container.
@@ -105,7 +109,7 @@ $ make down
 
 Your task is to:
 
-1. complete the `Dockerfile` in this directory such that if defines a docker image containing your RPN app;
+1. complete the `Dockerfile` in this directory such that it defines a docker image containing your RPN app;
    don't forget to include the necessary `node_modules` in your image, and
 2. complete the `docker-compose.yml` file in this directory to bring up a container running your image.
 
