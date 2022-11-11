@@ -5,3 +5,8 @@
 # #
 # # You must have completed task 1 (not 2) before starting on this.
 # # **************************************************
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
