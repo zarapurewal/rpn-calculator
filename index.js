@@ -140,7 +140,7 @@ app.post("/push", function(req, res) {
 
 app.get("/length", function(req, res) {
   value = stack.length;
-  console.log("server: getting lenght", value);
+  console.log("server: getting length", value);
   res.setHeader("Content-Type", "application/json");
   res.send(JSON.stringify(value));
 });
@@ -159,7 +159,7 @@ app.get("/peek", function(req, res) {
 });
 
 app.get("/pop", function(req, res) {
-  if (stack.lenght == 0) {
+  if (stack.length == 0) {
     res.status(400).send("bad request (stack empty)\n");
   }
   else {
@@ -171,7 +171,7 @@ app.get("/pop", function(req, res) {
 });
 
 app.get("/add", function(req, res) {
-  if (stack.lenght == 0) {
+  if (stack.length == 0) {
     res.status(400).send("bad request (stack empty)\n");
   }
   else {
@@ -185,7 +185,7 @@ app.get("/add", function(req, res) {
 });
 
 app.get("/subtract", function(req, res) {
-  if (stack.lenght == 0) {
+  if (stack.length == 0) {
     res.status(400).send("bad request (stack empty)\n");
   }
   else {
@@ -199,7 +199,7 @@ app.get("/subtract", function(req, res) {
 });
 
 app.get("/multiply", function(req, res) {
-  if (stack.lenght == 0) {
+  if (stack.length == 0) {
     res.status(400).send("bad request (stack empty)\n");
   }
   else {
