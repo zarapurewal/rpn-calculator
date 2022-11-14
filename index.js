@@ -212,7 +212,7 @@ app.get("/multiply", function(req, res) {
 });
 
 app.get("/divide", function(req, res) {
-  if (stack.lenght == 0) {
+  if (stack.length == 0) {
     res.status(400).send("bad request (stack empty)\n");
   }
   else {
